@@ -1,0 +1,33 @@
+{
+  "name": "nova-server",
+  "version": "1.0.0",
+  "description": "Webserver for Nova.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/palecio/nova-server.git"
+  },
+  "keywords": [
+    "nova",
+    "server",
+    "webserver",
+    "rest",
+    "api"
+  ],
+  "author": "Palecio",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://gitlab.com/palecio/nova-server/issues"
+  },
+  "homepage": "https://gitlab.com/palecio/nova-server#README",
+  "dependencies": {
+    "express": "^4.15.4"
+  },
+  "devDependencies": {
+    "jest": "^20.0.4",
+    "prettier": "^1.5.3"
+  }
+}
