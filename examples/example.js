@@ -1,3 +1,6 @@
 const server = require('../index');
 
-server.start({contextProcessorPaths: 'examples/contextprocessors'});
+server.start({
+  contextProcessorPaths: 'examples/contextprocessors',
+  baseContentModel: { initial: 'INIT!' }
+});

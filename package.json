@@ -24,6 +24,7 @@
   },
   "homepage": "https://gitlab.com/palecio/nova-server#README",
   "dependencies": {
+    "body-parser": "^1.17.2",
     "express": "^4.15.4"
   },
   "devDependencies": {
