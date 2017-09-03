@@ -4,25 +4,47 @@ const nova = require('/Users/palecio/Documents/nova/nova-core');
 
 const router = express.Router();
 
-const NOVA_PORT = 9001;
+const DEFAULT_NOVA_PORT = 9001;
 
-const paths = ['/docs/testname', '/docs/:var'];
-
-const executeContextProcessors = async function executeContextProcessors (executionContext, contentModel) {
-  const cpe = await nova.fetchContextProcessorEngine({paths: ['examples/contextprocessors']});
+const executeContextProcessors = async function executeContextProcessors(
+  executionContext,
+  contentModel,
+  contextProcessorPaths
+) {
+  const cpPaths = Array.isArray(contextProcessorPaths) ? contextProcessorPaths : [contextProcessorPaths];
+  const cpe = await nova.fetchContextProcessorEngine({
+    paths: cpPaths
+  });
   return cpe.execute(executionContext, contentModel);
 };
 
-paths.forEach(thePath => {
-  router.use(thePath, function (request, response) {
-    executeContextProcessors({path: request.baseUrl, request}, {}).then(contentModel => {
-      response.send(contentModel);
-    }).catch(e => console.error(e));
+const start = function start(configuration = {}) {
+  const {
+    port = DEFAULT_NOVA_PORT,
+    baseURLPath = '/api',
+    contextProcessorPaths = [],
+    baseContentModel = {}
+  } = configuration;
+
+  router.get('*', function(request, response) {
+    executeContextProcessors(
+      { path: request.path, request },
+      baseContentModel,
+      contextProcessorPaths
+    )
+      .then(contentModel => {
+        response.send(contentModel);
+      })
+      .catch(e => console.error(e));
   });
-});
 
-app.use('/api', router);
+  app.use(baseURLPath, router);
 
-app.listen(NOVA_PORT, function () {
-  console.log(`Nova Server started on port ${NOVA_PORT}`)
-});
+  app.listen(port, function() {
+    console.log(`Nova Server started on port ${port}`);
+  });
+};
+
+module.exports = {
+  start
+};
