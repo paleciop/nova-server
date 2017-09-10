@@ -4,7 +4,9 @@
   "description": "Webserver for Nova.",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "server": "node index",
+    "example": "node examples/places-api/example"
   },
   "repository": {
     "type": "git",
@@ -24,6 +26,7 @@
   },
   "homepage": "https://gitlab.com/palecio/nova-server#README",
   "dependencies": {
+    "axios": "^0.16.2",
     "body-parser": "^1.17.2",
     "express": "^4.15.4"
   },
