@@ -1,8 +1,10 @@
 'use strict';
 
 const server = require('../../index');
+const express = require('express');
+const app = express();
 
-const config = {
+const serverConfig = {
   contextProcessorPaths: 'examples/places-api/contextprocessors',
   baseContentModel: {
     config: {
@@ -15,4 +17,11 @@ const config = {
   }
 };
 
-server.start(config);
+server.start(serverConfig).then(() => {
+  // This then is not really necessary but it looks better in the logs if the static server starts after Nova.
+  app.use(express.static('examples/places-api/static'));
+  app.listen(9002, function () {
+    console.log('> Places App started on por 9002')
+  });
+});
+
