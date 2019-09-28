@@ -1,13 +1,18 @@
-'use strict';
+"use strict";
 
-const http = require('axios');
-const contextProcessor = require('/Users/palecio/Documents/nova/nova-core')
-  .pathAwareContextProcessor;
+const http = require("axios");
+const contextProcessor = require("nova-core").pathAwareContextProcessor;
 
 const cache = {};
 
 module.exports = contextProcessor.extend({
-  patterns: ['/places/info/*', '/places/info', '/places/everything', '/places/everything/*'],
+  patterns: [
+    "/places/info/*",
+    "/places/info",
+    "/places/everything",
+    "/places/everything/*"
+  ],
+  priority: 50,
   process(executionContext, contentModel) {
     const config = contentModel.config;
     const appId = config.wolframAlphaAPPId;
@@ -18,12 +23,14 @@ module.exports = contextProcessor.extend({
       if (cache[url]) {
         return cache[url];
       } else {
-        return http.get(url).then(response => {
-          cache[url] = response.data;
-          contentModel.info = response.data;
-        }).catch(e=>console.error(e));
+        return http
+          .get(url)
+          .then(response => {
+            cache[url] = response.data;
+            contentModel.info = response.data;
+          })
+          .catch(e => console.error(e));
       }
-
     }
   }
 });

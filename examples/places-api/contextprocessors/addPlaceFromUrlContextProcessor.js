@@ -1,6 +1,6 @@
 'use strict';
 
-const contextProcessor = require('/Users/palecio/Documents/nova/nova-core')
+const contextProcessor = require('nova-core')
   .pathAwareContextProcessor;
 
 module.exports = contextProcessor.extend({
@@ -8,6 +8,7 @@ module.exports = contextProcessor.extend({
   priority: 100,
   process(executionContext, contentModel) {
     const placeParam =  executionContext.match && executionContext.match.pathParams && executionContext.match.pathParams.place;
+    console.log(placeParam)
     if (!contentModel.place && placeParam) {
       contentModel.place = placeParam;
     }

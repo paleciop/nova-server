@@ -1,37 +1,46 @@
 {
   "name": "nova-server",
   "version": "1.0.0",
-  "description": "Webserver for Nova.",
+  "description": "Nova integration with Expressjs.",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
-    "server": "node index",
+    "test": "",
+    "start": "node index",
     "example": "node examples/places-api/example"
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@gitlab.com/palecio/nova-server.git"
+    "url": ""
   },
   "keywords": [
     "nova",
     "server",
     "webserver",
     "rest",
-    "api"
+    "api",
+    "expressjs",
+    "microservices"
   ],
-  "author": "Palecio",
+  "engines": {
+    "node": ">=12.11.0",
+    "npm": ">=6.11.3"
+  },
+  "author": {
+    "name": "Pablo Alecio",
+    "email": "paleciop@gmail.com"
+  },
   "license": "UNLICENSED",
   "bugs": {
-    "url": "https://gitlab.com/palecio/nova-server/issues"
+    "url": ""
   },
-  "homepage": "https://gitlab.com/palecio/nova-server#README",
+  "homepage": "",
   "dependencies": {
     "axios": "^0.16.2",
     "body-parser": "^1.17.2",
-    "express": "^4.15.4"
+    "express": "^4.15.4",
+    "nova-core": "file:../nova-core"
   },
   "devDependencies": {
-    "jest": "^20.0.4",
     "prettier": "^1.5.3"
   }
 }

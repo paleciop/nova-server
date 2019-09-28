@@ -1,7 +1,7 @@
 'use strict';
 
 const http = require('axios');
-const contextProcessor = require('/Users/palecio/Documents/nova/nova-core')
+const contextProcessor = require('nova-core')
   .pathAwareContextProcessor;
 
 const DEFAULT_LATITUDE = '14.6262174';
@@ -10,6 +10,7 @@ const DEFAULT_RADIUS = '500000';
 
 module.exports = contextProcessor.extend({
   patterns: ['/places/location', '/places/location/*', '/places/everything', '/places/everything/*'],
+  priority:50,
   process(executionContext, contentModel) {
     const config = contentModel.config;
     const apiKey = config.googleMapsAPIKey;
