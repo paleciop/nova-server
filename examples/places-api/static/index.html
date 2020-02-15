@@ -55,11 +55,11 @@
         <div class="container">
             <h1 class="display-3">{{title}}</h1>
             <p id="content"></p>
-            <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
+            <div v-if="title"  id="map" ></div>
+            <h1 v-if="!title">Search for a place.</h1>
         </div>
     </div>
-
-    <div class="container">
+    <div class="container" v-if="false">
         <!-- Example row of columns -->
         <div class="row">
             <div class="col-md-4">
@@ -96,5 +96,8 @@
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script src="https://unpkg.com/vue"></script>
 <script src="js/main.js"></script>
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyACKHVshPfR3YUWE6VEbGmz1JQm9yBiL04&callback=app">
+</script>
 </body>
 </html>
