@@ -43,6 +43,7 @@ install it right next to `nova-server` so npm can pick it up as a dependency.
 ## TODO
 - Comment
 - Tests
+- Testing framework
 - Error handling
 - Example
 - Authentication

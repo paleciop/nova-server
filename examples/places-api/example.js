@@ -12,7 +12,10 @@ const serverConfig = {
       googleMapsBaseUrl:
         'https://maps.googleapis.com/maps/api/place/nearbysearch/json',
       wolframAlphaBaseUrl: 'http://api.wolframalpha.com/v1/query',
-      wolframAlphaAPPId: '6ATVWP-U3U53X6EW5'
+      wolframAlphaAPPId: '6ATVWP-U3U53X6EW5',
+      longitude: -90.5275799,
+      latitude: 14.6262174,
+      radius: '500000'
     }
   }
 };
