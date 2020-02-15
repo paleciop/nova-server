@@ -3,7 +3,7 @@ Lightweight server that exposes an API to interact with Nova.
 
 ## Run example
 ```bash
-node examples/example.js
+npm run example
 ```
 Make a request to http://localhost:9002 to open the Example web app or
 hit `http://localhost:9001/api/places/everything/guatemala` directly to get the content model
@@ -43,6 +43,6 @@ install it right next to `nova-server` so npm can pick it up as a dependency.
 ## TODO
 - Comment
 - Tests
-- Error handling
+- Error handling - error levels
 - Example
 - Authentication

@@ -10,7 +10,7 @@ const server = require('./lib/server');
 if (require.main === module) {
   // If called through the CLI
   server.start({
-    contextProcessorPaths: 'examples/contextprocessors',
+    contextProcessorPaths: 'examples/places-api/contextprocessors',
     baseContentModel: { initial: 'INIT!' }
   });
 } else {
