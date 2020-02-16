@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <title>Greeting Test</title>
+  </head>
+  <body>
+    <h1>Greeting Test</h1>
+    <label for="userid">User ID:</label>
+    <input type="text" id="userid" name="test" />
+    <button onclick="myFunction()">Click me</button>
+    <p><i>Note: valid user ids are: palecio, skerrigan and jraynor</i></p>
+    <p id="greeting"></p>
+    <script>
+      function myFunction() {
+        const userId = document.getElementById('userid').value;
+        if (userId) {
+          const url = 'http://localhost:9001/api/greeting/' + userId;
+          fetch(url)
+            .then(response => response.json())
+            .then(json => {
+              document.getElementById('greeting').innerText =
+                json.code !== 500 && json.code !== 404
+                  ? json.personalizedGreeting
+                  : json.message;
+            });
+        }
+      }
+    </script>
+  </body>
+</html>

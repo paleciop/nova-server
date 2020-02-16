@@ -1,16 +1,16 @@
 {
-  "name": "nova-server",
+  "name": "@palecio/nova-server",
   "version": "1.0.0",
   "description": "Nova integration with Expressjs.",
   "main": "index.js",
   "scripts": {
     "test": "",
     "start": "node index",
-    "example": "node examples/places-api/example"
+    "example": "./node_modules/.bin/nodemon examples/index.js"
   },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/PaleSC2/nova-server.git"
   },
   "keywords": [
     "nova",
@@ -35,10 +35,16 @@
   },
   "homepage": "",
   "dependencies": {
+    "@palecio/nova-core": "^1.1.0",
     "axios": "^0.16.2",
     "body-parser": "^1.17.2",
     "express": "^4.15.4",
-    "nova-core": "file:../nova-core"
+    "nodemon": "^2.0.2",
+    "nova-core": "file:../nova-core",
+    "riteway": "^6.1.1"
+  },
+  "prettier": {
+    "singleQuote": true
   },
   "devDependencies": {
     "prettier": "^1.5.3"

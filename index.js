@@ -7,12 +7,10 @@
 
 const server = require('./lib/server');
 
+//TODO enable to specify the server configuration from the command line
 if (require.main === module) {
   // If called through the CLI
-  server.start({
-    contextProcessorPaths: 'examples/places-api/contextprocessors',
-    baseContentModel: { initial: 'INIT!' }
-  });
+  server.start({});
 } else {
   // Required as a module
   module.exports = server;
