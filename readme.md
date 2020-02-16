@@ -1,6 +1,12 @@
 # Nova Server
 Lightweight web server using Expressjs that enables building web APIs with Nova.
 
+## Install
+
+```javascript
+npm install @palecio/nova-server
+```
+
 ## Run example
 ```bash
 npm run example
@@ -38,9 +44,5 @@ module.exports = contextProcessor.extend({
 });
 ```
 
-## TODO
-- Comment
-- Tests
-- Error handling
-- Example
-- Authentication
+---
+**Author: Pablo Alecio (paleciop@gmail.com)**
