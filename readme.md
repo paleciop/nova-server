@@ -1,12 +1,12 @@
-# Nova Core
-Lightweight server that exposes an API to interact with Nova.
+# Nova Server
+Lightweight web server using Expressjs that enables building web APIs with Nova.
 
 ## Run example
 ```bash
-node examples/example.js
+npm run example
 ```
-Make a request to http://localhost:9002 to open the Example web app or
-hit `http://localhost:9001/api/places/everything/guatemala` directly to get the content model
+Make a request to http://localhost:3000/static/test.html to open the Example web app or
+hit `http://localhost:9001/api/greeting/palecio` directly to get the content model.
 
 ## Create your own Nova server
 ```
@@ -14,6 +14,7 @@ const serverConfig = {
   contextProcessorPaths: '<path-to-your-context-processors>',
   port: <port-number>, //Default is 9001
   baseURLPath: <a-url-prefix>, //Default is '/api'
+  allowedHostnames: <the-hostnames>, // hostnames allowed to make cross domain requests
   baseContentModel: { // The base content model 
     config: {} //an object with configs that will be accessible to the Context Processors 
   }
@@ -37,9 +38,6 @@ module.exports = contextProcessor.extend({
 });
 ```
 
-## Nova Core Dependency
-Because `nova-core` is not an npm package yet, make sure you
-install it right next to `nova-server` so npm can pick it up as a dependency.
 ## TODO
 - Comment
 - Tests

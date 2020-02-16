@@ -1,11 +1,10 @@
 {
   "name": "@palecio/nova-server",
   "version": "1.0.0",
-  "description": "Nova integration with Expressjs.",
+  "description": "Lightweight web server using Expressjs that enables building web APIs with Nova.",
   "main": "index.js",
   "scripts": {
-    "test": "",
-    "start": "node index",
+    "test": "riteway test/**/*.js ",
     "example": "./node_modules/.bin/nodemon examples/index.js"
   },
   "repository": {
@@ -38,15 +37,14 @@
     "@palecio/nova-core": "^1.1.0",
     "axios": "^0.16.2",
     "body-parser": "^1.17.2",
-    "express": "^4.15.4",
-    "nodemon": "^2.0.2",
-    "nova-core": "file:../nova-core",
-    "riteway": "^6.1.1"
+    "express": "^4.15.4"
   },
   "prettier": {
     "singleQuote": true
   },
   "devDependencies": {
+    "riteway": "^6.1.1",
+    "nodemon": "^2.0.2",
     "prettier": "^1.5.3"
   }
 }
