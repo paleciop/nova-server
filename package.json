@@ -1,6 +1,6 @@
 {
   "name": "@palecio/nova-server",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Lightweight web server using Expressjs that enables building web APIs with Nova.",
   "main": "index.js",
   "scripts": {
