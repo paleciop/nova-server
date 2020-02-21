@@ -1,12 +1,9 @@
-"use strict";
-
-const pathAwareContextProcessor = require("../../lib/context-processors/pathAwareContextProcessor");
-const fs = require('fs').promises;
+const pathAwareContextProcessor = require('../..').contextProcessors.PathAwareContextProcessor;
 
 module.exports = pathAwareContextProcessor.extend({
   priority: 0,
-  patterns: ["*"],
+  patterns: ['*'],
   process(executionContext, contentModel) {
-   delete contentModel.config;
+    delete contentModel.config;
   }
 });

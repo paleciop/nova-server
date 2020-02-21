@@ -1,16 +1,16 @@
-"use strict";
-
-const pathAwareContextProcessor = require("../../lib/context-processors/pathAwareContextProcessor");
-const fs = require('fs').promises;
+const pathAwareContextProcessor = require('../..').contextProcessors.PathAwareContextProcessor;
 
 module.exports = pathAwareContextProcessor.extend({
   priority: 70,
-  patterns: ["*greeting"],
+  patterns: ['*greeting'],
   process(executionContext, contentModel) {
     if (contentModel.user) {
       const fullName = contentModel.user.fullName || '';
       const greeting = contentModel.greeting || '';
-      contentModel.personalizedGreeting = greeting.replace('{{name}}', fullName);
+      contentModel.personalizedGreeting = greeting.replace(
+        '{{name}}',
+        fullName
+      );
     }
   }
 });

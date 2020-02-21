@@ -3,9 +3,8 @@
  * @fileOverview Nova Server.
  * @author <a href="mailto:paleciop@gmail.com">Pablo Alecio</a>
  */
-'use strict';
-
 const server = require('./lib/server');
+const contextProcessors = require('./lib/context-processors');
 
 //TODO enable to specify the server configuration from the command line
 if (require.main === module) {
@@ -13,5 +12,8 @@ if (require.main === module) {
   server.start({});
 } else {
   // Required as a module
-  module.exports = server;
+  module.exports = {
+    server,
+    contextProcessors
+  };
 }
