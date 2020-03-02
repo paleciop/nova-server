@@ -35,7 +35,7 @@
   "homepage": "",
   "dependencies": {
     "@palecio/nova-core": "^1.1.0",
-    "axios": "^0.16.2",
+    "axios": "^0.19.2",
     "body-parser": "^1.17.2",
     "express": "^4.15.4"
   },
