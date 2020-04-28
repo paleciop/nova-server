@@ -3,7 +3,7 @@ Lightweight web server using Expressjs that enables building web APIs with Nova.
 
 ## Install
 
-```javascript
+```
 npm install @palecio/nova-server
 ```
 
