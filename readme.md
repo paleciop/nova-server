@@ -7,13 +7,6 @@ Lightweight web server using Expressjs that enables building web APIs with Nova.
 npm install @palecio/nova-server
 ```
 
-## Run example
-```bash
-npm run example
-```
-Make a request to http://localhost:3000/static/test.html to open the Example web app or
-hit `http://localhost:9001/api/greeting/palecio` directly to get the content model.
-
 ## Create your own Nova server
 ```
 const serverConfig = {
@@ -39,7 +32,7 @@ module.exports = contextProcessor.extend({
   patterns: ["/my-path"], //Express-like routes
   priority: 10, //The higher the number, the sooner it runs, no priority means the CP doesn't have any dependencies so it'll run in parallel
   process(executionContext, contentModel) {
-    //modify the content model here
+    //do something with the content model here
   }
 });
 ```
@@ -47,7 +40,8 @@ module.exports = contextProcessor.extend({
 ### execution context TODO
 ### access request TODO
 ### httpHeaders context TODO
-
+### templatingEngine TODO
+### debugMode TODO
 
 ---
 **Author: Pablo Alecio (paleciop@gmail.com)**

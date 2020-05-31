@@ -6,14 +6,10 @@
 const server = require('./lib/server');
 const contextProcessors = require('./lib/context-processors');
 
-//TODO enable to specify the server configuration from the command line
-if (require.main === module) {
-  // If called through the CLI
-  server.start({});
-} else {
-  // Required as a module
-  module.exports = {
-    server,
-    contextProcessors
-  };
-}
+/**
+ * @type {{server: {start: Function}, contextProcessors: {pathAware: Object}}}
+ */
+module.exports = {
+  server,
+  contextProcessors
+};
