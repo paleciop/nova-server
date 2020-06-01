@@ -3,8 +3,7 @@
   "version": "1.4.0",
   "description": "Lightweight web server using Expressjs that enables building web APIs with Nova.",
   "main": "index.js",
-  "scripts": {
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "https://github.com/PaleSC2/nova-server.git"
@@ -26,7 +25,7 @@
     "name": "Pablo Alecio",
     "email": "paleciop@gmail.com"
   },
-  "license": "UNLICENSED",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/PaleSC2/nova-server/issues"
   },
@@ -43,7 +42,6 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.4",
-    "prettier": "^1.19.1",
-    "riteway": "^6.1.2"
+    "prettier": "^1.19.1"
   }
 }
