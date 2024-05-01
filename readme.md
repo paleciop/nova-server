@@ -42,6 +42,3 @@ module.exports = contextProcessor.extend({
 ### httpHeaders context TODO
 ### templatingEngine TODO
 ### debugMode TODO
-
----
-**Author: Pablo Alecio (paleciop@gmail.com)**
